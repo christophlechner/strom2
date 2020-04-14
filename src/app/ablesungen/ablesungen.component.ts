@@ -18,7 +18,7 @@ export class AblesungenComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.ablesungen$ = this.firestore.collection<Ablesung>('ablesungen')
+    this.ablesungen$ = this.firestore.collection<Ablesung>('ablesungen'/*, ref => ref.where('jahr', '==', 2020)*/)
       .valueChanges({'idField': 'docId'}).pipe(
         map(ablesungen => this.sortAblesungen(ablesungen))
       );

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Ablesung } from '../shared/model/ablesung';
 import { AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore/public_api';
-import { Router, ActivatedRoute } from '@angular/router';
-import { tap } from 'rxjs/operators';
-import { NotificationService } from '../shared/services/notification.service';
 import { MatDialog } from '@angular/material/dialog';
+import { tap } from 'rxjs/operators';
+import { Ablesung } from '../shared/model/ablesung';
+import { NotificationService } from '../shared/services/notification.service';
 import { ConfirmDialogComponent } from '../shared/components/confirm-dialog.component';
 
 @Component({

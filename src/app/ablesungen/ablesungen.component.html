@@ -5,11 +5,11 @@
 </button>
 
 <mat-nav-list>
-  <a mat-list-item *ngFor="let ablesung of ablesungen$ | async" [routerLink]="['/ablesungen', ablesung.docId]">
-    <h3 matLine>{{ablesung.monat | monat}} {{ablesung.jahr}} - {{ablesung | json}}</h3>
-    <p matLine>
-      <span>{{ablesung.f1}}</span>
-      <span class="demo-2"> -- {{ablesung.f2}} </span>
-    </p>
+  <a mat-list-item *ngFor="let ablesung of ablesungen$ | async"
+    [routerLink]="['/ablesungen', ablesung.docId]">
+    <h3 matLine>{{ablesung.monat | monat}} {{ablesung.jahr}}</h3>
+    <p matLine>F1: {{ablesung.f1}}</p>
+    <p matLine>F2: {{ablesung.f2}}</p>
+    <p matLine>F3: {{ablesung.f3}}</p>
   </a>
 </mat-nav-list>
