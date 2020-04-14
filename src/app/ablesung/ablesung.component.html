@@ -1,0 +1,60 @@
+<form [formGroup]="ablesungForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>Ablesung {{isNew ? 'eingeben' : 'bearbeiten'}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput type="number" placeholder="Jahr" formControlName="jahr">
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select formControlName="monat">
+                <mat-option *ngFor="let monat of monate" [value]="monat">
+                  {{monat | monat}}
+                  </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput type="number" placeholder="F1" formControlName="f1">
+              <mat-error *ngIf="ablesungForm.controls['f1'].hasError('required')">
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput type="number" placeholder="F2" formControlName="f2">
+                <mat-error *ngIf="ablesungForm.controls['f2'].hasError('required')">
+                  <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput type="number" placeholder="F3" formControlName="f3">
+                <mat-error *ngIf="ablesungForm.controls['f3'].hasError('required')">
+                  <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button type="button" [routerLink]="['/ablesungen']">Abbrechen</button>
+        <button mat-raised-button color="primary" type="submit"
+          [disabled]="ablesungForm.invalid || ablesungForm.pristine">Speichern</button>
+        <button mat-raised-button type="button" *ngIf="!isNew" (click)="onDelete()" >Löschen</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  

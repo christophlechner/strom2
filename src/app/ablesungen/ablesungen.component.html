@@ -1,8 +1,15 @@
-<p>ablesungen works!</p>
+<h1>Ablesungen</h1>
+<button mat-raised-button color="primary" type="button"
+  [routerLink]="['/ablesungen', 'new']">
+  Ablesung eingeben
+</button>
 
-  <ul>
-    <li class="text" *ngFor="let item of items$ | async">
-      {{item.name}}
-      {{item | json}}
-    </li>
-  </ul>
+<mat-nav-list>
+  <a mat-list-item *ngFor="let ablesung of ablesungen$ | async" [routerLink]="['/ablesungen', ablesung.docId]">
+    <h3 matLine>{{ablesung.monat | monat}} {{ablesung.jahr}} - {{ablesung | json}}</h3>
+    <p matLine>
+      <span>{{ablesung.f1}}</span>
+      <span class="demo-2"> -- {{ablesung.f2}} </span>
+    </p>
+  </a>
+</mat-nav-list>
