@@ -28,7 +28,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { StatistikenComponent } from './statistiken/statistiken.component';
 import { AblesungComponent } from './ablesung/ablesung.component';
 import { MonatPipe } from './shared/pipes/monat.pipe';
-import { ConfirmComponent } from './shared/components/confirm.component';
+import { ConfirmDialogComponent } from './shared/components/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { ConfirmComponent } from './shared/components/confirm.component';
     StatistikenComponent,
     AblesungComponent,
     MonatPipe,
-    ConfirmComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-confirm',
+  selector: 'app-confirm-dialog',
   template: `
     <div mat-dialog-content>
       {{message}}
@@ -15,10 +15,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styles: [
   ]
 })
-export class ConfirmComponent implements OnInit {
+export class ConfirmDialogComponent implements OnInit {
 
   constructor(
-    public dialogRef: MatDialogRef<ConfirmComponent>,
+    public dialogRef: MatDialogRef<ConfirmDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public message: string
   ) { }
 

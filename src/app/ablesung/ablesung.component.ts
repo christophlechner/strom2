@@ -7,7 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { NotificationService } from '../shared/services/notification.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmComponent } from '../shared/components/confirm.component';
+import { ConfirmDialogComponent } from '../shared/components/confirm-dialog.component';
 
 @Component({
   selector: 'app-ablesung',
@@ -89,7 +89,7 @@ export class AblesungComponent implements OnInit {
   }
 
   onDelete() {
-    const dialogRef = this.dialog.open(ConfirmComponent, {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '350px',
       data: "Ablesung löschen?"
     });
